@@ -1,4 +1,4 @@
-# ⚡ PySpark
+# ⚡ PySpark Shell
 
 Quickly get PySpark 2.4.1 running with Python 3.5 up and running locally via Docker.
 
