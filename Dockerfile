@@ -6,12 +6,12 @@ EXPOSE 4040
 # update the packages
 RUN apt-get update -y
 
-# install compilers and python libraries (at the moment required for the ujson pypi package)
+# install compilers and python dev headers
 RUN apt-get install build-essential python3-dev -y
 
 # We're using pipenv to manage dependencies
-RUN pip install "pip==10.0.1"
-RUN pip install "pipenv==11.10.1"
+RUN pip install "pip==19.0.3"
+RUN pip install "pipenv==2018.11.26"
 
 # Copy the pip files over to do initial setup
 COPY Pipfile* ./
