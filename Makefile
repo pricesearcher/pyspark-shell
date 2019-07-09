@@ -1,5 +1,7 @@
 DOCKER_IMAGE = pricesearcher/spark:2.4.1
 
+memory = 1G
+
 build:
 	@docker build -t $(DOCKER_IMAGE) .
 
@@ -14,4 +16,4 @@ shell: build
 	--env AWS_ACCESS_KEY_ID=$(AWS_ACCESS_KEY_ID) \
 	--env AWS_SECRET_ACCESS_KEY=$(AWS_SECRET_ACCESS_KEY) \
 	--env AWS_DEFAULT_REGION=$(AWS_DEFAULT_REGION) \
-	$(DOCKER_IMAGE) -c "pipenv run pyspark"
+	$(DOCKER_IMAGE) -c "pipenv run pyspark --driver-memory=$(memory)"
